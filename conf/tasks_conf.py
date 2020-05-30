@@ -2,7 +2,7 @@
 
 TASK_LIST = [{
     "task": "test_get_pids",
-    "cron": 5,
+    "cron": 10,
     "class": "RecordProcessOpenFdsCount",
     "detail": {
         "pNames": [

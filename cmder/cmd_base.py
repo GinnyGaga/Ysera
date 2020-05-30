@@ -47,7 +47,7 @@ class GetProcessIds(CmdBase):
 
     def get_pid_dict(self):
         text = self.execute()
-        logger.debug("result: {}".format(text))
+        logger.info("\ncmd: {}\nresult: \n{}".format(self.cmd, text))
 
 
 class GetProcessIdsV2:
@@ -58,7 +58,7 @@ class GetProcessIdsV2:
         for p_name in p_names:
             cmd = "ps -ef | grep {} | grep -v grep | awk '{{print$2,$8}}'".format(p_name)
             text = CmdBase(cmd).execute()
-            logger.debug("result: {}".format(text))
+            logger.info("\ncmd: {}\nresult: \n{}".format(cmd, text))
 
             if len(text) == 0:
                 self._pnames_dict[p_name] = []
@@ -105,7 +105,8 @@ class GetProcessOpenFdsCount(CmdBase):
         # 27 23876
         # 136 30467
         # """
-        logger.debug("text: {}".format(text))
+        logger.info("\ncmd: {}\nresult: \n{}".format(self.cmd, text))
+
         line = text.split("\n")
         for info in line:
             if len(info) == 0:
