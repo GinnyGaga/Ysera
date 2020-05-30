@@ -6,4 +6,3 @@
 /task/__pycache__
 /log/*.log
 /venv
-/log/debug.log

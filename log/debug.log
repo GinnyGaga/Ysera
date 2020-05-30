@@ -1,0 +1,52 @@
+[INFO][2020-05-30 19:14:02,412][log.py:9]..让我..入梦...
+[DEBUG][2020-05-30 19:14:02,413][runer.py:36]task.info: [test_get_pids]-[]-[RecordProcessOpenFdsCount]-[{'pNames': ['nginx', 'webserver']}]
+[DEBUG][2020-05-30 19:14:02,419][rcd_base.py:33]{'pNames': ['nginx', 'webserver']}
+[DEBUG][2020-05-30 19:14:02,419][cmd_base.py:20]cmd: ps -ef | grep nginx | grep -v grep | awk '{print$2,$8}'
+[DEBUG][2020-05-30 19:14:02,480][cmd_base.py:61]result: 
+[DEBUG][2020-05-30 19:14:02,480][cmd_base.py:20]cmd: ps -ef | grep webserver | grep -v grep | awk '{print$2,$8}'
+[DEBUG][2020-05-30 19:14:02,502][cmd_base.py:61]result: 
+[INFO][2020-05-30 19:14:02,503][rcd_base.py:36]pids_dict: {'nginx': [], 'webserver': []}
+[DEBUG][2020-05-30 19:14:02,503][cmd_base.py:20]cmd: lsof -n | awk '{print $2}' | sort | uniq -c | grep -E ''
+[INFO][2020-05-30 19:14:02,526][rcd_base.py:39]open_fds_info: None
+[INFO][2020-05-30 19:45:22,545][log.py:9]..让我..入梦...
+[DEBUG][2020-05-30 19:45:22,547][runer.py:33]task.info: [test_get_pids]-[5]-[RecordProcessOpenFdsCount]-[{'pNames': ['nginx', 'webserver']}]
+[DEBUG][2020-05-30 19:45:22,553][rcd_base.py:33]{'pNames': ['nginx', 'webserver']}
+[DEBUG][2020-05-30 19:45:22,553][cmd_base.py:20]cmd: ps -ef | grep nginx | grep -v grep | awk '{print$2,$8}'
+[DEBUG][2020-05-30 19:45:22,580][cmd_base.py:61]result: 
+[DEBUG][2020-05-30 19:45:22,580][cmd_base.py:20]cmd: ps -ef | grep webserver | grep -v grep | awk '{print$2,$8}'
+[DEBUG][2020-05-30 19:45:23,081][cmd_base.py:61]result: 
+[INFO][2020-05-30 19:45:23,081][rcd_base.py:36]pids_dict: {'nginx': [], 'webserver': []}
+[DEBUG][2020-05-30 19:45:23,081][cmd_base.py:20]cmd: lsof -n | awk '{print $2}' | sort | uniq -c | grep -E ''
+[INFO][2020-05-30 19:45:23,581][rcd_base.py:39]open_fds_info: None
+[DEBUG][2020-05-30 19:45:28,583][rcd_base.py:33]{'pNames': ['nginx', 'webserver']}
+[DEBUG][2020-05-30 19:45:28,583][cmd_base.py:20]cmd: ps -ef | grep nginx | grep -v grep | awk '{print$2,$8}'
+[DEBUG][2020-05-30 19:45:28,604][cmd_base.py:61]result: 
+[DEBUG][2020-05-30 19:45:28,604][cmd_base.py:20]cmd: ps -ef | grep webserver | grep -v grep | awk '{print$2,$8}'
+[DEBUG][2020-05-30 19:45:28,626][cmd_base.py:61]result: 
+[INFO][2020-05-30 19:45:28,626][rcd_base.py:36]pids_dict: {'nginx': [], 'webserver': []}
+[DEBUG][2020-05-30 19:45:28,626][cmd_base.py:20]cmd: lsof -n | awk '{print $2}' | sort | uniq -c | grep -E ''
+[INFO][2020-05-30 19:45:29,137][rcd_base.py:39]open_fds_info: None
+[DEBUG][2020-05-30 19:45:34,138][rcd_base.py:33]{'pNames': ['nginx', 'webserver']}
+[DEBUG][2020-05-30 19:45:34,138][cmd_base.py:20]cmd: ps -ef | grep nginx | grep -v grep | awk '{print$2,$8}'
+[DEBUG][2020-05-30 19:45:34,160][cmd_base.py:61]result: 
+[DEBUG][2020-05-30 19:45:34,160][cmd_base.py:20]cmd: ps -ef | grep webserver | grep -v grep | awk '{print$2,$8}'
+[DEBUG][2020-05-30 19:45:34,185][cmd_base.py:61]result: 
+[INFO][2020-05-30 19:45:34,185][rcd_base.py:36]pids_dict: {'nginx': [], 'webserver': []}
+[DEBUG][2020-05-30 19:45:34,185][cmd_base.py:20]cmd: lsof -n | awk '{print $2}' | sort | uniq -c | grep -E ''
+[INFO][2020-05-30 19:45:34,206][rcd_base.py:39]open_fds_info: None
+[DEBUG][2020-05-30 19:45:39,207][rcd_base.py:33]{'pNames': ['nginx', 'webserver']}
+[DEBUG][2020-05-30 19:45:39,207][cmd_base.py:20]cmd: ps -ef | grep nginx | grep -v grep | awk '{print$2,$8}'
+[DEBUG][2020-05-30 19:45:39,229][cmd_base.py:61]result: 
+[DEBUG][2020-05-30 19:45:39,229][cmd_base.py:20]cmd: ps -ef | grep webserver | grep -v grep | awk '{print$2,$8}'
+[DEBUG][2020-05-30 19:45:39,251][cmd_base.py:61]result: 
+[INFO][2020-05-30 19:45:39,251][rcd_base.py:36]pids_dict: {'nginx': [], 'webserver': []}
+[DEBUG][2020-05-30 19:45:39,251][cmd_base.py:20]cmd: lsof -n | awk '{print $2}' | sort | uniq -c | grep -E ''
+[INFO][2020-05-30 19:45:39,272][rcd_base.py:39]open_fds_info: None
+[DEBUG][2020-05-30 19:45:44,273][rcd_base.py:33]{'pNames': ['nginx', 'webserver']}
+[DEBUG][2020-05-30 19:45:44,273][cmd_base.py:20]cmd: ps -ef | grep nginx | grep -v grep | awk '{print$2,$8}'
+[DEBUG][2020-05-30 19:45:44,295][cmd_base.py:61]result: 
+[DEBUG][2020-05-30 19:45:44,295][cmd_base.py:20]cmd: ps -ef | grep webserver | grep -v grep | awk '{print$2,$8}'
+[DEBUG][2020-05-30 19:45:44,316][cmd_base.py:61]result: 
+[INFO][2020-05-30 19:45:44,316][rcd_base.py:36]pids_dict: {'nginx': [], 'webserver': []}
+[DEBUG][2020-05-30 19:45:44,316][cmd_base.py:20]cmd: lsof -n | awk '{print $2}' | sort | uniq -c | grep -E ''
+[INFO][2020-05-30 19:45:44,338][rcd_base.py:39]open_fds_info: None
