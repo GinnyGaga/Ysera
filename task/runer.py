@@ -22,9 +22,6 @@ class RunnerBase(object):
 
             self.tasks.append(TaskHelper.build_task(t))
 
-    def new_class(self, cname, task_detail):
-        return getattr(__import__("recorder.rcd_base", fromlist=["rcd_base"]), cname)(task_detail)
-
 
 class Runner(RunnerBase):
     def __init__(self):
@@ -34,10 +31,13 @@ class Runner(RunnerBase):
                 return
             for task in self.tasks:
                 logger.debug("task.info: [{}]-[{}]-[{}]-[{}]".format(task.name, task.cron, task.cname, task.detail))
-                inst = self.new_class(task.cname, task.detail)
-                inst.do()
+                task.start()
+
         except MyException as e:
             logger.error("code: {}, desc: {}, ex: {}".format(e.code(), e.desc(), e.ex))
         except Exception as e:
             logger.exception(e)
             logger.error("Exception err: {}".format(e))
+
+        for task in self.tasks:
+            task.join()
