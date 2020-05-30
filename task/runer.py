@@ -1,4 +1,6 @@
 # coding=utf-8
+from signal import signal, SIGINT
+
 from common.excep import MyException, ErrorDuplicateTask
 from conf.tasks_conf import TASK_LIST
 from common.log import logger
@@ -41,3 +43,4 @@ class Runner(RunnerBase):
 
         for task in self.tasks:
             task.join()
+        signal(SIGINT, TaskHelper.exit_tasks)

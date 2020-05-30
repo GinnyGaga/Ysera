@@ -4,6 +4,8 @@ import time
 
 from common.excep import ErrorInvalidConf
 
+task_exit = False
+
 
 class Task(threading.Thread):
     def __init__(self, name: str, cron: int, cname, detail: dict):
@@ -18,7 +20,8 @@ class Task(threading.Thread):
         return getattr(__import__("recorder.rcd_base", fromlist=["rcd_base"]), cname)(task_detail)
 
     def run(self) -> None:
-        while True:
+        global task_exit
+        while task_exit is False:
             inst = self.new_class(self.cname, self.detail)
             inst.do()
             time.sleep(self.cron)
@@ -31,3 +34,8 @@ class TaskHelper:
             return Task(task["task"], task["cron"], task["class"], task["detail"])
         except KeyError as e:
             raise ErrorInvalidConf(ex=e.__str__())
+
+    @staticmethod
+    def exit_tasks(signum, frame):
+        global task_exit
+        task_exit = True
