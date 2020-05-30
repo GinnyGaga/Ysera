@@ -1,0 +1,8 @@
+/.idea
+/cmder/__pycache__
+/common/__pycache__
+/conf/__pycache__
+/recorder/__pycache__
+/task/__pycache__
+/log/*.log
+/venv

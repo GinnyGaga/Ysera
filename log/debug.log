@@ -1,0 +1,10 @@
+[INFO][2020-05-30 19:14:02,412][log.py:9]..让我..入梦...
+[DEBUG][2020-05-30 19:14:02,413][runer.py:36]task.info: [test_get_pids]-[]-[RecordProcessOpenFdsCount]-[{'pNames': ['nginx', 'webserver']}]
+[DEBUG][2020-05-30 19:14:02,419][rcd_base.py:33]{'pNames': ['nginx', 'webserver']}
+[DEBUG][2020-05-30 19:14:02,419][cmd_base.py:20]cmd: ps -ef | grep nginx | grep -v grep | awk '{print$2,$8}'
+[DEBUG][2020-05-30 19:14:02,480][cmd_base.py:61]result: 
+[DEBUG][2020-05-30 19:14:02,480][cmd_base.py:20]cmd: ps -ef | grep webserver | grep -v grep | awk '{print$2,$8}'
+[DEBUG][2020-05-30 19:14:02,502][cmd_base.py:61]result: 
+[INFO][2020-05-30 19:14:02,503][rcd_base.py:36]pids_dict: {'nginx': [], 'webserver': []}
+[DEBUG][2020-05-30 19:14:02,503][cmd_base.py:20]cmd: lsof -n | awk '{print $2}' | sort | uniq -c | grep -E ''
+[INFO][2020-05-30 19:14:02,526][rcd_base.py:39]open_fds_info: None
