@@ -1,7 +1,7 @@
 # coding=utf-8
 import threading
 import time
-
+from common.log import logger
 from common.excep import ErrorInvalidConf
 
 task_exit = False
@@ -26,6 +26,8 @@ class Task(threading.Thread):
             inst.do()
             time.sleep(self.cron)
 
+        logger.info("task[{}] exited!".format(self.name))
+
 
 class TaskHelper:
     @staticmethod
@@ -37,5 +39,6 @@ class TaskHelper:
 
     @staticmethod
     def exit_tasks(signum, frame):
+        logger.info("received a signal: {}-{}".format(signum, frame))
         global task_exit
         task_exit = True

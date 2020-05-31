@@ -41,6 +41,8 @@ class Runner(RunnerBase):
             logger.exception(e)
             logger.error("Exception err: {}".format(e))
 
+        signal(SIGINT, TaskHelper.exit_tasks)
+        logger.info("waiting for the task thread to exit...")
+
         for task in self.tasks:
             task.join()
-        signal(SIGINT, TaskHelper.exit_tasks)

@@ -10,7 +10,9 @@ class CmdBase(object):
     Record the command to be executed
     """
 
-    def __init__(self, cmd):
+    def __init__(self, cmd: str):
+        if self.cmd is None or len(self.cmd) == 0:
+            raise ErrorInvalidParameter(ex="cmd is empty")
         self.cmd = cmd
 
     def execute(self) -> str:
@@ -18,8 +20,6 @@ class CmdBase(object):
         execute cmd
         """
         logger.debug("cmd: {}".format(self.cmd))
-        if self.cmd is None or len(self.cmd) == 0:
-            raise ErrorInvalidParameter(ex="cmd is empty")
         r = os.popen(self.cmd)
         text = r.read()
         r.close()
@@ -39,7 +39,7 @@ class GetProcessIds(CmdBase):
 
     def __init__(self, p_names: list):
         sub_cmd = "|".join(p_names)
-        cmd = "ps -ef | grep -E '{}' | grep -v grep | {{print$2,$8}}".format(sub_cmd)
+        cmd = "ps -ef | grep -E '{}' | grep -v grep | awk '{{print$2,$8}}'".format(sub_cmd)
         super(GetProcessIds, self).__init__(cmd)
 
         for name in p_names:
