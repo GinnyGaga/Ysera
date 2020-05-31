@@ -24,6 +24,9 @@
 	}]
 	```
 	3.将....\Ysera设置为python工作目录</br>
+	```
+	export PYTHONPATH=/xxx/你的脚本放置目录/
+	```
 	4.执行\test\run.py</br>
 
 - 注意
